@@ -1,3 +1,20 @@
+echo "Installing expect..."
+
+sudo apt-get update
+sudo apt-get -y install expect
+
+if [ $? -eq 0 ]; then
+    echo "expect installed!"
+else
+    echo "Failed to install expect."
+    exit 1
+fi
+
+echo "Installing NBIA Data Retriever..."
+echo "Learn more here: https://wiki.cancerimagingarchive.net/display/NBIA/NBIA+Data+Retriever+Command-Line+Interface+Guide"
+
+bash submodules/data-loaders/.devcontainer/nbia_data_retriever_install.sh
+
 echo "Installing http-server..."
 
 npm i -g http-server
@@ -74,6 +91,12 @@ else
     echo "Failed to install Git LFS."
     exit 1
 fi
+
+echo "Installing submodules..."
+
+git submodule update --init --recursive
+
+submodules_location="./submodules"
 
 echo "Getting convenient bash shortcuts..."
 

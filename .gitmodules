@@ -1,0 +1,3 @@
+[submodule "submodules/data-loaders"]
+	path = submodules/data-loaders
+	url = https://github.com/ruc-practical-ai/data-loaders.git
