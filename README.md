@@ -1,4 +1,4 @@
-# Loaded Lecture Template
+# Fall 2024 - Class 05
 
 This class reviews more tools in our machine learning ecosystem, including more advanced PyTorch examples, ONNX, captum, and lightning.
 
