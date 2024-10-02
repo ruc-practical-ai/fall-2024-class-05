@@ -16,6 +16,9 @@ ipympl = "^0.9.4"
 scipy = "^1.14.1"
 latex = "^0.7.0"
 pydatapull = {path = "submodules/data-loaders"}
+torch = "^2.4.1"
+torchvision = "^0.19.1"
+gdown = "^5.2.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
