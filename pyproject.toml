@@ -19,6 +19,7 @@ pydatapull = {path = "submodules/data-loaders"}
 torch = "^2.4.1"
 torchvision = "^0.19.1"
 gdown = "^5.2.0"
+pandas = "^2.2.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
