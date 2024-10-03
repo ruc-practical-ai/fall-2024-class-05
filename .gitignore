@@ -13,6 +13,10 @@ notebooks/models/*
 notebooks/runs/*
 !notebooks/runs/README.md
 
+# TorchViz
+notebooks/torchviz/*.png
+notebooks/*.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

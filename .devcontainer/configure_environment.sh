@@ -26,6 +26,16 @@ else
     exit 1
 fi
 
+sudo apt-get -y update
+sudo apt-get -y install graphviz
+
+if [ $? -eq 0 ]; then
+    echo "graphviz installed!"
+else
+    echo "Failed to install graphviz."
+    exit 1
+fi
+
 echo "Installing texlive..."
 
 sudo apt-get -y update

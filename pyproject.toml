@@ -26,6 +26,8 @@ flask-compress = "^1.15"
 onnx = "^1.17.0"
 onnxruntime = "^1.19.2"
 tensorboard = "^2.18.0"
+jupyter = "^1.1.1"
+torchviz = "^0.0.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
