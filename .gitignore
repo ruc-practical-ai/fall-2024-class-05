@@ -10,8 +10,8 @@ notebooks/example_data/*
 *.onnx
 notebooks/models/*
 !notebooks/models/README.md
-runs
-!runs/README.md
+notebooks/runs/*
+!notebooks/runs/README.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
