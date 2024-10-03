@@ -57,6 +57,12 @@ else
     exit 1
 fi
 
+echo "Installing submodules..."
+
+git submodule update --init --recursive
+
+submodules_location="./submodules"
+
 echo "Installing Poetry..."
 
 pip install poetry
@@ -101,12 +107,6 @@ else
     echo "Failed to install Git LFS."
     exit 1
 fi
-
-echo "Installing submodules..."
-
-git submodule update --init --recursive
-
-submodules_location="./submodules"
 
 echo "Getting convenient bash shortcuts..."
 
