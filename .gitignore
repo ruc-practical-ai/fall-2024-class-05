@@ -1,6 +1,7 @@
 # Example data
 notebooks/example_data
 !notebooks/example_data/README.md
+!notebooks/example_data/custom_dataset
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
