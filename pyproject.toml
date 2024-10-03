@@ -20,6 +20,9 @@ torch = "^2.4.1"
 torchvision = "^0.19.1"
 gdown = "^5.2.0"
 pandas = "^2.2.3"
+captum = "^0.7.0"
+flask = "^3.0.3"
+flask-compress = "^1.15"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"

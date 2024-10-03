@@ -2,6 +2,7 @@
 notebooks/example_data/*
 !notebooks/example_data/README.md
 !notebooks/example_data/custom_dataset/
+!notebooks/example_data/captum_examples/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
