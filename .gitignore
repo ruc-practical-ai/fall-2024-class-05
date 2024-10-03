@@ -4,6 +4,10 @@ notebooks/example_data/*
 !notebooks/example_data/custom_dataset/
 !notebooks/example_data/captum_examples/
 
+# Models
+*.pt
+*.pth
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
