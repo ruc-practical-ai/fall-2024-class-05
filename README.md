@@ -1,4 +1,4 @@
-# Fall 2024 - Class 05
+# Fall 2024 Class 05 - More Deep Learning Tools
 
 This class reviews more tools in our machine learning ecosystem, including more advanced PyTorch examples, ONNX, captum, and lightning.
 
