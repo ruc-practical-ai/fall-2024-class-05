@@ -17,6 +17,7 @@ notebooks/runs/*
 notebooks/torchviz/*
 notebooks/torchviz/*.png
 notebooks/*.png
+!notebooks/test.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
