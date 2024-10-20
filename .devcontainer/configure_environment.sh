@@ -1,5 +1,9 @@
 export DEBIAN_FRONTEND=noninteractive
 
+user_name="developer"
+group_name="developer"
+developer_home="/home/$user_name"
+
 # ==========================
 # Basic package installation
 # ==========================
@@ -89,19 +93,58 @@ else
     exit 1
 fi
 
+echo "Installing submodules..."
+
+git submodule update --init --recursive
+
+submodules_location="./submodules"
+
+echo "Installing expect..."
+
+sudo apt-get update
+sudo apt-get -y install expect
+
+if [ $? -eq 0 ]; then
+    echo "expect installed!"
+else
+    echo "Failed to install expect."
+    exit 1
+fi
+
+apt-get -y update \
+&& apt-get install -yq wget
+
+if [ $? -eq 0 ]; then
+    echo "wget installed!"
+else
+    echo "Failed to install wget."
+    exit 1
+fi
+
+echo "Installing NBIA Data Retriever..."
+echo "Learn more here: https://wiki.cancerimagingarchive.net/display/NBIA/NBIA+Data+Retriever+Command-Line+Interface+Guide"
+
+bash submodules/data-loaders/.devcontainer/nbia_data_retriever_install.sh "$developer_home"
+
+sudo apt-get -y update
+sudo apt-get -y install graphviz
+
+if [ $? -eq 0 ]; then
+    echo "graphviz installed!"
+else
+    echo "Failed to install graphviz."
+    exit 1
+fi
+
 # =====================
 # Account configuration
 # =====================
 
-user_name="developer"
-group_name="developer"
 command_line_aliases_file="https://raw.githubusercontent.com/mauro-j-sanchirico/personal-scripts/refs/heads/main/bash_aliases/command_line.bash_aliases"
 git_aliases_file="https://raw.githubusercontent.com/mauro-j-sanchirico/personal-scripts/refs/heads/main/bash_aliases/git.bash_aliases"
 poetry_aliases_file="https://raw.githubusercontent.com/mauro-j-sanchirico/personal-scripts/refs/heads/main/bash_aliases/poetry.bash_aliases"
 
 echo "Getting convenient bash shortcuts..."
-
-developer_home="/home/$user_name"
 
 add_aliases() {
     touch $developer_home/.bashrc
