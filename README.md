@@ -16,20 +16,6 @@ If required, use `Cmd` / `Ctrl` + `Shift` + `P` &rarr; `Codespaces: Rebuild Cont
 
 **WARNING: This repository contains scripts which can help download large sets of data (10s of GBs) for academic machine learning projects. If you perform these downloads in codespaces, you will risk using up all your free storage for the month!**
 
-### Display of Presentations via Github Codespaces (Recommended)
-
-Navigate to the `presentations` folder.
-
-```bash
-cd presentations
-```
-
-Start an http-server.
-
-```bash
-bash ../scripts/start_server.sh
-```
-
 ## Installation via a Dev Container (Recommended for Development)
 
 If developing on this project, it is recommended to use a locally hosted Dev Container. Codespaces is not recommended since downloading large datasets can consume space (which may be a problem if you want to stay under the free limit for codespaces).
@@ -37,7 +23,6 @@ If developing on this project, it is recommended to use a locally hosted Dev Con
 To use this repository via a Dev Container, be sure you have the Dev Containers extension installed, along with Docker Desktop and WSL 2 (Windows only). Clone the repository, open VS Code in the repository root, and click the button shown in the pop up in the bottom-right corner to open in the Dev Container.
 
 If the popup doesn't show type `Cmd` / `Ctrl` + `Shift` + `P` &rarr; `Reopen in Container` (if the container is already built) or `Cmd` / `Ctrl` + `Shift` + `P` &rarr; `Build and Open in Container` if the container is not yet built.
-
 
 ## Usage in a Dev Container
 
