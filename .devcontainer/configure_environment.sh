@@ -124,7 +124,9 @@ fi
 echo "Installing NBIA Data Retriever..."
 echo "Learn more here: https://wiki.cancerimagingarchive.net/display/NBIA/NBIA+Data+Retriever+Command-Line+Interface+Guide"
 
-bash submodules/data-loaders/.devcontainer/nbia_data_retriever_install.sh "$developer_home"
+nbia_installer="submodules/data-loaders/.devcontainer/nbia_data_retriever_install.sh"
+
+bash "$nbia_installer" "$developer_home"
 
 sudo apt-get -y update
 sudo apt-get -y install graphviz
