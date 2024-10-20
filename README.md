@@ -29,24 +29,15 @@ Start an http-server.
 ```bash
 bash ../scripts/start_server.sh
 ```
+
 ## Installation via a Dev Container (Recommended for Development)
 
 If developing on this project, it is recommended to use a locally hosted Dev Container. Codespaces is not recommended since downloading large datasets can consume space (which may be a problem if you want to stay under the free limit for codespaces).
 
-To install via a locally hosted Dev Container, confirm your machine has a local Dev Container compatible environment (e.g., confirm you have Docker Desktop and Windows Subsystem Linux if running on Windows). Clone the repository.
+To use this repository via a Dev Container, be sure you have the Dev Containers extension installed, along with Docker Desktop and WSL 2 (Windows only). Clone the repository, open VS Code in the repository root, and click the button shown in the pop up in the bottom-right corner to open in the Dev Container.
 
-```bash
-git clone https://github.com/ruc-practical-ai/data-loaders.git
-cd data-loaders
-```
+If the popup doesn't show type `Cmd` / `Ctrl` + `Shift` + `P` &rarr; `Reopen in Container` (if the container is already built) or `Cmd` / `Ctrl` + `Shift` + `P` &rarr; `Build and Open in Container` if the container is not yet built.
 
-Navigate to the repository directory and open it in VS Code.
-
-```bash
-code .
-```
-
-VS Code should prompt you to open in a Dev Container. If it does not or if the container does not build, use the command `Cmd` / `Ctrl` + `Shift` + `P` &rarr; `Dev Containers: Rebuild Container`
 
 ## Usage in a Dev Container
 
@@ -74,82 +65,25 @@ bash ../scripts/start_server.sh
 
 ## Local Installation
 
-For local installation, the process to obtain required dependencies will be machine / environment dependent. For installation on Ubuntu, the `.devcontainer/configure_environment.sh` script can be used.
+The dependencies required for local installation can be found in `.devcontainer/Dockerfile` and `.devcontainer/configure_environment.sh`.
 
-### Dependencies for Local Installation
+For local installation, perform setup and install dependencies in the order they appear in the Dockerfile and the configuration script, starting with the Dockerfile.
 
-It is recommended to use this repository in a locally hosted Dev Container. If attempting to install locally, the following dependencies are required.
+Final setup commands can be found in `.devcontainer/post_attach.sh`.
 
-#### NBIA Data Retriever
+Note that setup will be different depending on the local OS.
 
-Some tools in this repository use Python to generate datasets or download basic machine learning datasets. Other tools access data from The Cancer Imaging Archive (TCIA) using the National Biomedical Imaging Archives (NBIA) Data Retriever.
+#### Viewing HTML Pages Directly in a Browser from Local Installation
 
-The NBIA Data Retriever command line interface is required to run some scripts in this repository. Installation and usage instructions can be found [here](https://wiki.cancerimagingarchive.net/display/NBIA/NBIA+Data+Retriever+Command-Line+Interface+Guide).
+To view HTML pages directly in a browser, simply navigate to the pages of interest and open them with a preferred web browser.
 
-#### Expect
+#### Selecting the Correct Python Interpreter
 
-Scripts in this repository require the [expect](https://linux.die.net/man/1/expect) linux utility. Some scripts require expect to work. Install expect using the preferred method for your system.
-
-#### Reveal.js
-
-This project uses [reveal.js](https://revealjs.com/) for some presentations in the `presentations` folder. All reveal.js dependencies are included in the repository. The repository itself is a modified [basic setup](https://revealjs.com/installation/#basic-setup) of reveal.js.
-
-#### Poetry
-
-This project is built on Python 3.12. Poetry is required for installation. To install Poetry, view the instructions [here](https://python-poetry.org/docs/).
-
-#### TexLive
-
-This project also requires TexLive to render math fonts. Texlive can be installed via the following commands.
-
-```bash
-sudo apt-get -y update
-sudo apt-get -y install texlive
-sudo apt-get -y install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
-```
-
-### Local Installation Steps
-
-#### Project Cloning
-
-To install locally, first install the required dependencies (Poetry and TexLive), then clone the repository and navigate to its directory.
-
-```bash
-git clone https://github.com/ruc-practical-ai/data-loaders.git
-cd data-loaders
-```
-
-#### Installing Python Dependencies Locally
-
-To install locally, first install the required dependencies (Poetry and TexLive), then clone the repository and navigate to its directory.
-
-```bash
-git clone https://github.com/ruc-practical-ai/data-loaders.git
-cd data-loaders
-```
-
-Configure Poetry to install its virtual environment inside the repository directory.
-
-```bash
-poetry config virtualenvs.in-project true
-```
-
-Install the repository's Python dependencies.
-
-```bash
-poetry install
-```
-
-Check where Poetry built the virtual environment with the following command.
-
-```bash
-poetry env info --path
-```
+If the correct Python interpreter is not selected by default, select it manually in VS Code.
 
 Open the command pallette with `Ctrl` + `Shift` + `P` and type `Python: Select Interpreter`.
 
 Now specify that VSCode should use the that interpreter (the one in `./.venv/Scripts/python.exe`). Once you specify this, Jupyter notebooks should show the project's interpreter as an option when you click the `kernel` icon or the small icon showing the current version of python (e.g., `Python 3.12.1`) and then click `Select Another Kernel`, and finally click `Python Environments...`.
-
 
 ## License
 
